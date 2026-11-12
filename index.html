@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tenaz</title>
+
+<style>
+  :root { --bg: #f3f4f6; --card: #ffffff; --text: #111827; --muted: #4b5563; --accent: #c2410c; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b0c0f; --card: #17191e; --text: #f3f4f6; --muted: #a9afbb; --accent: #fb923c; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  article { background: var(--card); border-radius: 20px; padding: 28px 24px; }
+  .langs { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 4px 16px; font-size: 15px; }
+  .langs a { color: var(--muted); text-decoration: none; }
+  .langs a[aria-current] { color: var(--accent); font-weight: 700; }
+  .brand { color: var(--accent); font-weight: 800; letter-spacing: .02em; margin: 0; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 4px 0 4px; }
+  h2 { font-size: 21px; margin: 28px 0 8px; }
+  .date { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+  ul { padding-inline-start: 22px; }
+  .choose { list-style: none; padding: 0; }
+  .choose li { margin: 8px 0; }
+  li::marker { color: var(--accent); }
+  a { color: var(--accent); overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+            <article>
+            <p class="brand">Tenaz</p>
+            <h1>Tenaz</h1>
+<p>Strength training app.</p>
+<h2>Privacy policy</h2>
+            <ul class="choose">
+            <li><a href="privacy/es.html" lang="es">Español</a> · <span lang="es">Elige tu idioma</span></li>
+<li><a href="privacy/en.html" lang="en">English</a> · <span lang="en">Choose your language</span></li>
+<li><a href="privacy/pt.html" lang="pt">Português (Brasil)</a> · <span lang="pt">Escolha seu idioma</span></li>
+<li><a href="privacy/de.html" lang="de">Deutsch</a> · <span lang="de">Wähle deine Sprache</span></li>
+<li><a href="privacy/fr.html" lang="fr">Français</a> · <span lang="fr">Choisis ta langue</span></li>
+<li><a href="privacy/ar.html" lang="ar">العربية</a> · <span lang="ar">اختر لغتك</span></li>
+            </ul>
+            </article>
+            <script>
+            (function () {
+              var ours = ["es","en","pt","de","fr","ar"];
+              var wanted = (navigator.languages || [navigator.language || "en"]).map(function (l) { return l.slice(0, 2).toLowerCase(); });
+              var lang = wanted.filter(function (l) { return ours.indexOf(l) >= 0; })[0] || "en";
+              location.replace("privacy/" + lang + ".html");
+            })();
+            </script>
+</main>
+</body>
+</html>
