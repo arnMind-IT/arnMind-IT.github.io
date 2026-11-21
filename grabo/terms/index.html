@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of use · Grabo</title>
+<style>
+  :root { --bg: #f6f7fa; --card: #ffffff; --text: #12141c; --muted: #5a6072; --accent: #d8372b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12141b; --card: #181b23; --text: #eef0f5; --muted: #979dac; --accent: #ff4a3d; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  article { background: var(--card); border-radius: 20px; padding: 28px 24px; }
+  .langs { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 4px 16px; font-size: 15px; }
+  .langs a { color: var(--muted); text-decoration: none; }
+  .langs a[aria-current] { color: var(--accent); font-weight: 700; }
+  .brand { color: var(--text); font-weight: 800; font-size: 22px; letter-spacing: -.01em; margin: 0; }
+  .brand::before { content: ""; display: inline-block; width: .5em; height: .5em; border-radius: 50%; background: var(--accent); margin-inline-end: .35em; vertical-align: .08em; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 4px 0 4px; }
+  h2 { font-size: 21px; margin: 28px 0 8px; }
+  .date { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+  .docs { margin-top: 32px; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--muted) 30%, transparent); font-size: 15px; }
+  .docs [aria-current] { color: var(--muted); }
+  ul { padding-inline-start: 22px; }
+  .choose { list-style: none; padding: 0; }
+  .choose li { margin: 8px 0; }
+  li::marker { color: var(--accent); }
+  a { color: var(--accent); overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+<article>
+<p class="brand">Grabo</p>
+<h1>Terms of use</h1>
+<ul class="choose">
+<li><a href="en.html" lang="en">English</a> · <span lang="en">Choose your language</span></li>
+<li><a href="es.html" lang="es">Español</a> · <span lang="es">Elige tu idioma</span></li>
+</ul>
+</article>
+<script>
+(function () {
+  var ours = ["en","es"];
+  var wanted = (navigator.languages || [navigator.language || "en"]).map(function (l) { return l.slice(0, 2).toLowerCase(); });
+  var lang = wanted.filter(function (l) { return ours.indexOf(l) >= 0; })[0] || "en";
+  location.replace(lang + ".html");
+})();
+</script>
+</main>
+</body>
+</html>
