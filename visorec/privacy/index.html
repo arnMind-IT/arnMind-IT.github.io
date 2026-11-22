@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grabo · Grabo</title>
+<title>Privacy policy · Visorec</title>
 <style>
   :root { --bg: #f6f7fa; --card: #ffffff; --text: #12141c; --muted: #5a6072; --accent: #d8372b; }
   @media (prefers-color-scheme: dark) {
@@ -32,14 +32,21 @@
 <body>
 <main>
 <article>
-<p class="brand">Grabo</p>
-<h1>Screen recorder · Grabadora de pantalla</h1>
+<p class="brand">Visorec</p>
+<h1>Privacy policy</h1>
 <ul class="choose">
-<li lang="en"><a href="privacy/en.html">Privacy policy</a> · <a href="terms/en.html">Terms of use</a></li>
-<li lang="es"><a href="privacy/es.html">Política de privacidad</a> · <a href="terms/es.html">Condiciones de uso</a></li>
+<li><a href="en.html" lang="en">English</a> · <span lang="en">Choose your language</span></li>
+<li><a href="es.html" lang="es">Español</a> · <span lang="es">Elige tu idioma</span></li>
 </ul>
-<p class="docs">arnMind · <a href="mailto:forja.arnmind@gmail.com">forja.arnmind@gmail.com</a></p>
 </article>
+<script>
+(function () {
+  var ours = ["en","es"];
+  var wanted = (navigator.languages || [navigator.language || "en"]).map(function (l) { return l.slice(0, 2).toLowerCase(); });
+  var lang = wanted.filter(function (l) { return ours.indexOf(l) >= 0; })[0] || "en";
+  location.replace(lang + ".html");
+})();
+</script>
 </main>
 </body>
 </html>
